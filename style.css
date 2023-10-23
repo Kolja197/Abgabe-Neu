@@ -71,7 +71,7 @@ main .hauptbereich{
     flex-direction: column;
     display: flex;
     
-    margin: 5em;
+    margin: 4em;
     gap: 2em;
  }
 
