@@ -64,14 +64,14 @@ main{
     width: 100%;
 }
 /* Anordnung Mobile-First */
-main .hauptbereich{
+main .hauptbere«ich{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     display: flex;
     
-    margin-top: 12em;
+    margin-top: 3em;
     gap: 1em;
  }
 
