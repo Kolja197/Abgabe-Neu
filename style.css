@@ -11,7 +11,7 @@
 
  .hidden{
     /*display: none;*/
-    display: none;
+    
  }
 
 html, body{
@@ -129,6 +129,7 @@ main .hauptbereich{
     width: 100%;
     
     margin-top: 3em;
+   
     gap: 1em;
  }
 
@@ -172,13 +173,15 @@ main .searchbar input::placeholder{
 
 }
     
-main .textfeld{
+main #textfeld{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    font-size: 1em;
+    font-size: 1em; 
+    margin-left: 1em;
+    margin-right: 1em
  }
 
 
