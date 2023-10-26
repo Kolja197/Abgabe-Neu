@@ -64,7 +64,7 @@ main{
     width: 100%;
 }
 /* Anordnung Mobile-First */
-main .hauptbere«ich{
+main .hauptbereich{
     display: flex;
     justify-content: center;
     align-items: center;
