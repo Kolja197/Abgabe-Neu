@@ -23,7 +23,9 @@ window.addEventListener("load", () => {
     let routes = [
         {
             url: "^/$",
-            show: () => swapContent("Startansicht", "Startseite"),
+            show: () => { apiSuche();
+                swapContent("Startansicht", "Startseite");
+            },
         },{
             url: "^/other/$",
             show: () => swapContent("Detailansicht", "Andere Seite"),
@@ -37,10 +39,18 @@ window.addEventListener("load", () => {
 
 /* Suchfunktion */
 function apiSuche(){
-    let suchbegriff = document.getElementById("suchleiste").value;
-    let textfeld = document.getElementById("textfeld");
+    console.log("Startseite geladen!");
+    let suchbegriff = document.getElementById('suchleiste');
+    let textfeld = document.getElementById('textfeld');
+    let suchButton = document.getElementById('apiSucheStarten');
 
-    fetch(`https://dummyjson.com/users/filter?key=hair.color&value=${suchbegriff}`)
+
+    suchButton.addEventListener('click' ,function(){
+        console.log("Suche durchgeführt!");
+        let eingabe = suchbegriff.value.trim();
+        console.log(eingabe);
+
+        fetch(`https://dummyjson.com/users/filter?key=hair.color&value=${eingabe}`)
         .then(response => {
             if(!response.ok) {
                 throw new Error('HTTP-Fehler, Status:' + response.status);     
@@ -48,12 +58,20 @@ function apiSuche(){
             return response.json();
         })
         .then(data => {
-            textfeld.textContent = 'Das Ergebnis Ihrer Suchanfrage: ' + JSON.stringify(data);
+            let personen = data.users;
+
+            if(personen.length > 0){
+                textfeld.textContent = 'Das Ergebnis Ihrer Suchanfrage: ' + JSON.stringify(data);}
+            
+            else{
+                textfeld.textContent = 'Keine Person zu Ihrer Suchanfrage gefunden';
+            }
         })
         .catch(error => {
             console.error('Fehler bei der API-Anfrage', error);
             textfeld.textContent = 'Der von Ihnen gewählte Suchbegriff weißt keine Ergebnisse auf.';
         });
+    });
 }
 
 
