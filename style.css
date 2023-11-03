@@ -199,7 +199,6 @@ main .kunden-container{
 }
 
 /* Animation für hervorheben des Suchergebnisses - wenn die Maus über das Element fährt */
-
 main .kunden-container:hover{
     font-size: 115%;
 }

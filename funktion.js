@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
     let routes = [
         {
             url: "^/$",
-            show: () => { apiSuche();
+            show: () => { apiSucheKunden();
                 swapContent("Startansicht", "Startseite");
             },
         },{
@@ -39,8 +39,8 @@ window.addEventListener("load", () => {
 
 
 
-/* Suchfunktion */
-function apiSuche(){
+/* Suchfunktion für die erste Kundenansicht*/
+function apiSucheKunden(){
     console.log("Startseite geladen!");
     let suchbegriff = document.getElementById('suchleiste');
     let textfeld = document.getElementById('textfeld');
@@ -64,7 +64,7 @@ function apiSuche(){
         let eingabe = suchbegriff.value.trim();
         console.log(eingabe);
 
-        fetch(`https://dummyjson.com/users/filter?key=hair.color&value=${eingabe}`)
+        fetch(`https://dummyjson.com/users/filter?key=address.city&value=${eingabe}`)
         .then(response => {
             if(!response.ok) {
                 throw new Error('HTTP-Fehler, Status:' + response.status);     
