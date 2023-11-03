@@ -36,6 +36,8 @@ body{
     flex-direction: column;
     min-height: 100vh;
     overflow: auto;
+
+    color: white;
 }
 
 /* Startanimation */
@@ -77,9 +79,7 @@ header .header-container{
  
 /* Schriftart Ueberschrift */
 header h1{
-    color: white;
-    font-size: 1.5rem;
-    
+    font-size: 1.5rem;    
 } 
 
 /* Navigation-Bar */
@@ -100,12 +100,11 @@ header .navigation ul{
 /* Design und Abstand der Listenelemente */
 header .navigation .list-element{
     margin-bottom: 0.7em;
-    color: white;
     cursor: pointer; 
 }
 
 header .navigation a{
-    color: white;
+   color: white;
 }
 
 
@@ -117,7 +116,7 @@ main{
     padding: 0;
     margin: 0;
     flex: 1;
-    margin-bottom: 1em;;
+    margin-bottom: 2em;
 }
 /* Anordnung Mobile-First */
 main .hauptbereich{
@@ -130,7 +129,7 @@ main .hauptbereich{
     
     margin-top: 3em;
    
-    gap: 1em;
+    gap: 2em;
  }
 
  /* Suchleiste Darstellung */
@@ -178,12 +177,32 @@ main #textfeld{
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
     font-size: 1em; 
     margin-left: 1em;
-    margin-right: 1em
+    margin-right: 1em;
+
+
+    /* Die eingefügten Namen sollen untereinander stehen */
+    flex-direction: column;
+    gap: 1em;
+
  }
 
+/* textfeld wird nach der API-Abfrage durch div Container der Klasse "kunden-container" ersetz */
+main .kunden-container{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1em;
+    padding: 0.5em 0.5em;
+
+    cursor: pointer;
+    transition: font-size 0.2s;
+}
+
+/* Animation für hervorheben des Suchergebnisses - wenn die Maus über das Element fährt */
+
+main .kunden-container:hover{
+    font-size: 115%;
+}
 
 
 /***************

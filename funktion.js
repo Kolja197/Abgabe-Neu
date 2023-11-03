@@ -37,6 +37,8 @@ window.addEventListener("load", () => {
 });
 
 
+
+
 /* Suchfunktion */
 function apiSuche(){
     console.log("Startseite geladen!");
@@ -44,8 +46,20 @@ function apiSuche(){
     let textfeld = document.getElementById('textfeld');
     let suchButton = document.getElementById('apiSucheStarten');
 
+    // Starten der Suche beim Drücken von Enter
+    suchbegriff.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            starteSuche();
+        }
+    });
 
-    suchButton.addEventListener('click' ,function(){
+    // Starten der Suche beim Klicken des Such-Buttons
+    suchButton.addEventListener('click', starteSuche);
+
+    /* Sowohl durch Klicken als auch durch das Drücken von Enter wird die Funktion starteSuche() ausgeführt.
+       Hier wird der Text im Eingabefeld "Suchbegriff" einer Variable übergeben und der API-Abfrage hinzugefügt. */
+
+    function starteSuche() {
         console.log("Suche durchgeführt!");
         let eingabe = suchbegriff.value.trim();
         console.log(eingabe);
@@ -61,7 +75,15 @@ function apiSuche(){
             let personen = data.users;
 
             if(personen.length > 0){
-                textfeld.textContent = 'Das Ergebnis Ihrer Suchanfrage: ' + JSON.stringify(data);}
+
+                let container = ``;
+                
+                // Ersetzte HTML-Inhalt des div-Containers "textfeld" durch die einzelnen Personen
+                personen.forEach(person => {
+                    container += `<div class="kunden-container">${person.firstName} ${person.lastName}</div>`;
+                })
+                textfeld.innerHTML = container;
+            }
             
             else{
                 textfeld.textContent = 'Keine Person zu Ihrer Suchanfrage gefunden';
@@ -69,9 +91,9 @@ function apiSuche(){
         })
         .catch(error => {
             console.error('Fehler bei der API-Anfrage', error);
-            textfeld.textContent = 'Der von Ihnen gewählte Suchbegriff weißt keine Ergebnisse auf.';
+            textfeld.textContent = 'Der von Ihnen gewählte Suchbegriff weist keine Ergebnisse auf.';
         });
-    });
+    }
 }
 
 
