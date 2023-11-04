@@ -80,7 +80,7 @@ function apiSucheKunden(){
                 
                 // Ersetzte HTML-Inhalt des div-Containers "textfeld" durch die einzelnen Personen
                 personen.forEach(person => {
-                    container += `<div class="kunden-container">${person.firstName} ${person.lastName}</div>`;
+                    container += `<div class="kunden-container"><button id="personenauswahl">${person.firstName} ${person.lastName}</div></div>`;
                 })
                 textfeld.innerHTML = container;
             }

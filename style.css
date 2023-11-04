@@ -34,9 +34,9 @@ body{
     
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    
     overflow: auto;
-
+    min-height: 100vh;
     color: white;
 }
 
@@ -116,8 +116,9 @@ main{
     padding: 0;
     margin: 0;
     flex: 1;
-    margin-bottom: 2em;
+    margin-bottom: 2em;   
 }
+
 /* Anordnung Mobile-First */
 main .hauptbereich{
     display: flex;
@@ -184,22 +185,28 @@ main #textfeld{
 
     /* Die eingefügten Namen sollen untereinander stehen */
     flex-direction: column;
-    gap: 1em;
+    gap: 2em;
 
  }
 
 /* textfeld wird nach der API-Abfrage durch div Container der Klasse "kunden-container" ersetz */
 main .kunden-container{
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 1em;
-    padding: 0.5em 0.5em;
-
-    cursor: pointer;
-    transition: font-size 0.2s;
 }
 
+main #personenauswahl{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1.5em;
+    padding: 0.5em 0.5em;
+    border: none;
+    transition: font-size 0.3s;
+
+    cursor: pointer;
+    color: white;
+}
+
+
 /* Animation für hervorheben des Suchergebnisses - wenn die Maus über das Element fährt */
-main .kunden-container:hover{
+main #personenauswahl:hover{
     font-size: 115%;
 }
 
