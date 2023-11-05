@@ -94,6 +94,7 @@ header .navigation{
 /* Zentrieren der ul innerhalb des nav-containers */
 header .navigation ul{
     list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
@@ -105,6 +106,7 @@ header .navigation .list-element{
 
 header .navigation a{
    color: white;
+   text-decoration: none;
 }
 
 
@@ -195,10 +197,11 @@ main .spalten{
 }
 
 
-/* textfeld wird nach der API-Abfrage durch div Container der Klasse "kunden-container" ersetz */
+/* Textfeld wird nach der API-Abfrage durch div Container der Klasse "kunden-container" ersetz */
 main .kunden-container{
 }
 
+/* innerHTML aus JS, Darstellung der Personen (Kurzdarstellung) nach der API-Abfrage */
 main #personenauswahl{
     background: rgba(255, 255, 255, 0.2);
     border-radius: 1.5em;
