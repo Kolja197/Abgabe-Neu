@@ -189,6 +189,12 @@ main #textfeld{
 
  }
 
+ /* Abstand zwischen den Absätzen auf der Startseite */
+main .spalten{
+    padding-bottom: 0.5em;
+}
+
+
 /* textfeld wird nach der API-Abfrage durch div Container der Klasse "kunden-container" ersetz */
 main .kunden-container{
 }
