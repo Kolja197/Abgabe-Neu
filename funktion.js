@@ -86,7 +86,7 @@ function apiSucheKunden(){
             }
             
             else{
-                textfeld.textContent = 'Keine Person zu Ihrer Suchanfrage gefunden';
+                textfeld.textContent = 'Ich konnte keine Person aus der Stadt "' + eingabe + '" finden';
             }
         })
         .catch(error => {
