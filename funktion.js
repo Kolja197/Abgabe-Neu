@@ -61,7 +61,7 @@ function apiSucheKunden(){
 
     function starteSuche() {
         console.log("Suche durchgeführt!");
-        let eingabe = suchbegriff.value.trim();
+        let eingabe =  ersterBuchstabeInCaps(suchbegriff.value.trim());
         console.log(eingabe);
 
         fetch(`https://dummyjson.com/users/filter?key=address.city&value=${eingabe}`)
@@ -96,6 +96,14 @@ function apiSucheKunden(){
     }
 }
 
+/* Diese Funktion soll ermöglichen, dass ein Suchbegriff unabhänig von Groß- und Kleinschreibung auf Ergebnisse trifft */ 
+function ersterBuchstabeInCaps(wort){
+    if(wort.length == 0){
+        return wort;
+    }
+
+    return wort.charAt(0).toUpperCase() + wort.slice(1).toLowerCase();
+}
 
 
 
