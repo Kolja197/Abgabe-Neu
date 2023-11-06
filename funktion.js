@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
                 swapContent("Startansicht", "Startseite");
             },
         },{
-            url: "^/other/$",
+            url: "^/others/$",
             show: () => swapContent("Detailansicht", "Andere Seite"),
         }
     ];
@@ -35,6 +35,7 @@ window.addEventListener("load", () => {
     let router = new Router(routes);
     router.start();
 });
+
 
 
 
@@ -80,7 +81,7 @@ function apiSucheKunden(){
                 
                 // Ersetzte HTML-Inhalt des div-Containers "textfeld" durch die einzelnen Personen
                 personen.forEach(person => {
-                    container += `<div class="kunden-container"><button id="personenauswahl">${person.firstName} ${person.lastName}</div></div>`;
+                    container += `<div class="kunden-container"><button class="person" id="personenauswahl">${person.firstName} ${person.lastName}</button></div>`;
                 })
                 textfeld.innerHTML = container;
             }
@@ -94,6 +95,16 @@ function apiSucheKunden(){
             textfeld.textContent = 'Der von Ihnen gewählte Suchbegriff weist keine Ergebnisse auf.';
         });
     }
+
+    /* Eventlistener, bei dem Klicken auf die Kurzansicht einer Person wird neue URL aufgerufen */
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('person')) {
+            
+            let currentURL = window.location.href;
+            let newURL = currentURL + '#/others/'; 
+            window.location.href = newURL; 
+        }
+    });
 }
 
 /* Diese Funktion soll ermöglichen, dass ein Suchbegriff unabhänig von Groß- und Kleinschreibung auf Ergebnisse trifft */ 
@@ -104,8 +115,6 @@ function ersterBuchstabeInCaps(wort){
 
     return wort.charAt(0).toUpperCase() + wort.slice(1).toLowerCase();
 }
-
-
 
 
 "use strict";
