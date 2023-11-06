@@ -121,7 +121,7 @@ main{
     margin-bottom: 2em;   
 }
 
-/* Anordnung Mobile-First */
+/* Anordnung des Hauptbereichs der Startseite */
 main .hauptbereich{
     display: flex;
     justify-content: center;
@@ -133,6 +133,21 @@ main .hauptbereich{
     margin-top: 3em;
    
     gap: 2em;
+ }
+
+ /* Anordnung des Hauptbereichs auf der Detailseite */
+ main .hauptbereich2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    
+    margin-top: 3em;
+   
+    gap: 2em;
+
  }
 
  /* Suchleiste Darstellung */

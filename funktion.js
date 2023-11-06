@@ -24,13 +24,14 @@ window.addEventListener("load", () => {
         {
             url: "^/$",
             show: () => { apiSuchePersonen();
-                swapContent("Startansicht", "Startseite");
+                swapContent("startansicht", "Startseite");
             },
         },{
             url: "^/users/[0-9]+$",
-            show: () => { /*apiSucheBlockposts();*/
-                swapContent("Detailansicht", "Andere Seite");
-               }   }
+            show: () => { apiSucheBlockposts();
+                swapContent("zweiteseite", "Detailansicht");
+               }  
+            }
     ];
 
     let router = new Router(routes);
@@ -111,10 +112,36 @@ function apiSuchePersonen(){
 }
 
 /* Funktion für die Detailansicht, sowie die Blockposts eines Users */
-/* function apiSucheBlockposts{
+function apiSucheBlockposts(){
     console.log("Detailansicht geladen!");
+    let personendaten = document.getElementById('personendaten');
 
-} */
+    /* Extrahieren der UserId aus der URL */
+    let url = window.location.href;
+    let teile = url.split('/');
+    let userId = teile[teile.length - 1];
+    console.log(userId);
+
+    starteDetailsuche();
+    
+
+    function starteDetailsuche(){
+        console.log("Detailsuche wird durchgefüht");
+    
+        fetch(`https://dummyjson.com/users/${userId}`)
+        .then(response => {
+            if(!response.ok) {
+                throw new Error('HTTP-Fehler, Status:' + response.status);     
+            }
+            return response.json();
+        })
+        .then(data => {
+            let person = data;
+                personContainer = `<div class="persondetail">${person.firstName} ${person.lastName}</div>`;
+                personendaten.innerHTML = personContainer;
+        })
+   }
+} 
 
 
 /* Diese Funktion soll ermöglichen, dass ein Suchbegriff unabhänig von Groß- und Kleinschreibung auf Ergebnisse trifft */ 
