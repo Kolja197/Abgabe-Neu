@@ -23,13 +23,14 @@ window.addEventListener("load", () => {
     let routes = [
         {
             url: "^/$",
-            show: () => { apiSucheKunden();
+            show: () => { apiSuchePersonen();
                 swapContent("Startansicht", "Startseite");
             },
         },{
-            url: "^/others/$",
-            show: () => swapContent("Detailansicht", "Andere Seite"),
-        }
+            url: "^/users/[0-9]+$",
+            show: () => { /*apiSucheBlockposts();*/
+                swapContent("Detailansicht", "Andere Seite");
+               }   }
     ];
 
     let router = new Router(routes);
@@ -40,8 +41,8 @@ window.addEventListener("load", () => {
 
 
 
-/* Suchfunktion für die erste Kundenansicht*/
-function apiSucheKunden(){
+/* Funktion für die erste Kundenansicht*/
+function apiSuchePersonen(){
     console.log("Startseite geladen!");
     let suchbegriff = document.getElementById('suchleiste');
     let textfeld = document.getElementById('textfeld');
@@ -81,7 +82,7 @@ function apiSucheKunden(){
                 
                 // Ersetzte HTML-Inhalt des div-Containers "textfeld" durch die einzelnen Personen
                 personen.forEach(person => {
-                    container += `<div class="kunden-container"><button class="person" id="personenauswahl">${person.firstName} ${person.lastName}</button></div>`;
+                    container += `<div class="kunden-container"><button class="person" data-id="${person.id}" id="personenauswahl">${person.firstName} ${person.lastName}</button></div>`;
                 })
                 textfeld.innerHTML = container;
             }
@@ -100,12 +101,21 @@ function apiSucheKunden(){
     document.addEventListener('click', function(event) {
         if (event.target.classList.contains('person')) {
             
+            let selectedUserId = event.target.dataset.id;
+
             let currentURL = window.location.href;
-            let newURL = currentURL + '#/others/'; 
+            let newURL = currentURL + '#/users/' + selectedUserId;
             window.location.href = newURL; 
         }
     });
 }
+
+/* Funktion für die Detailansicht, sowie die Blockposts eines Users */
+/* function apiSucheBlockposts{
+    console.log("Detailansicht geladen!");
+
+} */
+
 
 /* Diese Funktion soll ermöglichen, dass ein Suchbegriff unabhänig von Groß- und Kleinschreibung auf Ergebnisse trifft */ 
 function ersterBuchstabeInCaps(wort){
@@ -115,6 +125,7 @@ function ersterBuchstabeInCaps(wort){
 
     return wort.charAt(0).toUpperCase() + wort.slice(1).toLowerCase();
 }
+
 
 
 "use strict";
@@ -215,5 +226,4 @@ class Router {
         route.show(matches);
     }
 }
-
 
