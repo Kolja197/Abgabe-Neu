@@ -79,7 +79,7 @@ header .header-container{
  
 /* Schriftart Ueberschrift */
 header h1{
-    font-size: 1.5rem;    
+    font-size: 2rem;    
 } 
 
 /* Navigation-Bar */
@@ -107,6 +107,7 @@ header .navigation .list-element{
 header .navigation a{
    color: white;
    text-decoration: none;
+   font-size: 1.5rem;
 }
 
 
@@ -118,7 +119,8 @@ main{
     padding: 0;
     margin: 0;
     flex: 1;
-    margin-bottom: 2em;   
+    margin-bottom: 2em;
+    font-size: 1.1em; 
 }
 
 /* Anordnung des Hauptbereichs der Startseite */
@@ -173,7 +175,7 @@ main .searchbar button{
 /* Farbe des Placeholders "Suchen..." anpassen */
 main .searchbar input::placeholder{
     color: white;
-
+    font-size: 1.1em;
 }
     
 main #textfeld{
@@ -209,7 +211,7 @@ main #personenauswahl{
     padding: 0.5em 0.5em;
     border: none;
     transition: font-size 0.3s;
-
+    font-size: 1.2em;
     cursor: pointer;
     color: white;
 }
@@ -224,7 +226,7 @@ main #personenauswahl:hover{
  *  HAUPTBEREICH SEITE 2*
  ************************/
 
-/* UserCard für die Darstellung der gefundenen Person */
+
 /* Anordnung des Hauptbereichs auf der Detailseite */
 main .hauptbereich2{
     display: flex;
@@ -235,7 +237,7 @@ main .hauptbereich2{
     width: 100%;
     
     margin-top: 3em;
-    gap: 2em;
+    gap: 0.5em;
 }
 
 .personendaten{
@@ -310,7 +312,7 @@ main .hauptbereich2{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.1rem;
  }
 
 
