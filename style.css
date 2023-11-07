@@ -111,9 +111,9 @@ header .navigation a{
 
 
 
-/***************
- *  HAUPTBEREICH *
- ***************/
+/************************
+ *  HAUPTBEREICH SEITE 1*
+ ************************/
 main{
     padding: 0;
     margin: 0;
@@ -135,20 +135,6 @@ main .hauptbereich{
     gap: 2em;
  }
 
- /* Anordnung des Hauptbereichs auf der Detailseite */
- main .hauptbereich2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    width: 100%;
-    
-    margin-top: 3em;
-   
-    gap: 2em;
-
- }
 
  /* Suchleiste Darstellung */
 main .searchbar{
@@ -234,8 +220,81 @@ main #personenauswahl:hover{
     font-size: 115%;
 }
 
+/************************
+ *  HAUPTBEREICH SEITE 2*
+ ************************/
 
-/***************
+/* UserCard für die Darstellung der gefundenen Person */
+/* Anordnung des Hauptbereichs auf der Detailseite */
+main .hauptbereich2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    
+    margin-top: 3em;
+    gap: 2em;
+}
+
+.personendaten{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* Anpassung Profilbild */
+.profilbild_container{
+    margin-bottom: 1em;
+}
+.profilbild_img{
+    height: 7em;
+    width: 7em;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Gestaltung der Usercard */
+ .usercard {
+    width: 20em;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Abstand der Schrift zum Container-Rand */
+.usercard-content{
+   margin: 1em;
+}
+
+/* Abstand zwischen den Zeilen */
+.usercard-content div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+/* Schriftart anpassen */
+.usercard-content .label{
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /***************
  * FUSSBEREICH *
  ***************/
 

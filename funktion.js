@@ -136,7 +136,32 @@ function apiSucheBlockposts(){
         })
         .then(data => {
             let person = data;
-                personContainer = `<div class="persondetail">${person.firstName} ${person.lastName}</div>`;
+                    personContainer =  `<div class="profilbild_container">
+                                            <img class="profilbild_img "src="${person.image}" alt="Profilbild">
+                                        </div>
+                                        <div class="usercard">
+                                            <div class="usercard-content">
+                                                <div>
+                                                    <span class="label">Name:</span>
+                                                    <span>${person.firstName} ${person.lastName}</span>
+                                                </div>
+                                                <div>
+                                                     <span class="label">Alter:</span>
+                                                     <span>${person.age}</span>
+                                                 </div>
+                                                <div>
+                                                    <span class="label">Beruf:</span>
+                                                    <span>${person.company.title}</span>
+                                                </div>
+                                                <div>
+                                                    <span class="label">Email:</span>
+                                                    <span>${person.email}</span>
+                                                </div>
+                                                <div>
+                                                    <span class="label">Telefonnummer:</span>
+                                                    <span>${person.phone}</span>
+                                                </div>
+                                        </div>`;
                 personendaten.innerHTML = personContainer;
         })
    }
