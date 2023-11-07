@@ -115,6 +115,7 @@ function apiSuchePersonen(){
 function apiSucheBlockposts(){
     console.log("Detailansicht geladen!");
     let personendaten = document.querySelector('#zweiteseite .personendaten');
+    let personenblockposts = document.querySelector('#zweiteseite .personenblockposts');
 
     /* Extrahieren der UserId aus der URL */
     let url = window.location.href;
@@ -123,6 +124,7 @@ function apiSucheBlockposts(){
     console.log(userId);
     
     starteDetailsuche();
+    //starteBlockPostsuche();
     
     function starteDetailsuche(){
         console.log("Detailsuche wird durchgefüht");
@@ -165,6 +167,31 @@ function apiSucheBlockposts(){
                 personendaten.innerHTML = personContainer;
         })
    }
+
+   /*function starteBlockPostsuche(){
+    console.log("Blockpostsuche wird durchgeführt");
+
+    fetch(`https://dummyjson.com/users/${userId}/posts`)
+    .then(response => {
+        if(!response.ok) {
+            throw new Error('HTTP-Fehler, Status:' + response.status);     
+        }
+        return response.json();
+    })
+    .then(data => {
+        let post = data;
+
+
+            let postContainer = ``;
+            
+            // Ersetzte HTML-Inhalt des div-Containers "textfeld" durch die einzelnen Personen
+           forEach(post => {
+                postContainer += `<div>${post.title}  </div>`;
+            })
+            personenblockposts.innerHTML = postContainer;
+        
+    })
+}*/
 } 
 
 
