@@ -114,17 +114,16 @@ function apiSuchePersonen(){
 /* Funktion für die Detailansicht, sowie die Blockposts eines Users */
 function apiSucheBlockposts(){
     console.log("Detailansicht geladen!");
-    let personendaten = document.getElementById('personendaten');
+    let personendaten = document.querySelector('#zweiteseite .personendaten');
 
     /* Extrahieren der UserId aus der URL */
     let url = window.location.href;
     let teile = url.split('/');
     let userId = teile[teile.length - 1];
     console.log(userId);
-
+    
     starteDetailsuche();
     
-
     function starteDetailsuche(){
         console.log("Detailsuche wird durchgefüht");
     
