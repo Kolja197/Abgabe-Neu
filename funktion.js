@@ -124,7 +124,7 @@ function apiSucheBlockposts(){
     console.log(userId);
     
     starteDetailsuche();
-    //starteBlockPostsuche();
+    starteBlockPostsuche();
     
     function starteDetailsuche(){
         console.log("Detailsuche wird durchgefüht");
@@ -168,10 +168,10 @@ function apiSucheBlockposts(){
         })
    }
 
-   /*function starteBlockPostsuche(){
+    function starteBlockPostsuche(){
     console.log("Blockpostsuche wird durchgeführt");
 
-    fetch(`https://dummyjson.com/users/${userId}/posts`)
+    fetch(`https://dummyjson.com/posts/user/${userId}`)
     .then(response => {
         if(!response.ok) {
             throw new Error('HTTP-Fehler, Status:' + response.status);     
@@ -179,19 +179,23 @@ function apiSucheBlockposts(){
         return response.json();
     })
     .then(data => {
-        let post = data;
+        let userpost = data.posts;
 
 
             let postContainer = ``;
             
             // Ersetzte HTML-Inhalt des div-Containers "textfeld" durch die einzelnen Personen
-           forEach(post => {
-                postContainer += `<div>${post.title}  </div>`;
+            userpost.forEach(userpost => {
+                postContainer += `<div class="userpost">
+                                    <h4>${userpost.title}</h4>
+                                    <p>${userpost.body}</p>
+                                </div>`;
             })
+
             personenblockposts.innerHTML = postContainer;
         
     })
-}*/
+}
 } 
 
 
