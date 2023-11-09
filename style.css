@@ -1,7 +1,11 @@
 /************
-* VARIABLEN *
+* MEDIA-QUERY *
 *************/
-
+@media screen and (min-width: 768px) {
+    header .navigation{
+        flex-direction: row;
+    }
+  }
 
 
 
@@ -210,17 +214,17 @@ main #personenauswahl{
     border-radius: 1.5em;
     padding: 0.5em 0.5em;
     border: none;
-    transition: font-size 0.3s;
     font-size: 1.2em;
     cursor: pointer;
     color: white;
 }
 
-
 /* Animation für hervorheben des Suchergebnisses - wenn die Maus über das Element fährt */
 main #personenauswahl:hover{
-    font-size: 115%;
+    box-shadow: 3px 3px 3px black;
+
 }
+
 
 /************************
  *  HAUPTBEREICH SEITE 2*
@@ -282,7 +286,43 @@ main .hauptbereich2{
     font-weight: bold;
 }
 
+/* Überschrift "Blockposts" ändern */
+.blockpost{
+    text-decoration: underline;
+    margin-top: 3em;
+    margin-bottom: 0;
+}
 
+/* Blockpost-Container anpassen */
+.personenblockposts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+/* Anpassen Titel der Blockposts */
+.personenblockposts h4{
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+/* Text mittig zentrieren */
+.personenblockposts p{
+    text-align: center;
+}
+
+
+/* Userposts darstellen, Seitenabstände etc. */
+.userpost{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1em;
+}
 
  /***************
  * FUSSBEREICH *
