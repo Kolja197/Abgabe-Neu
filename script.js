@@ -186,14 +186,22 @@ function apiSucheBlockposts(){
             let ueberschrift = `<h3 class="blockpost">Blockposts</h3>`;
             
             // Ersetzte HTML-Inhalt des div-Containers "textfeld" durch die einzelnen Personen
-            userpost.forEach(userpost => {
-                postContainer += `<div class="userpost">
-                                    <h4>${userpost.title}</h4>
-                                    <p>${userpost.body}</p>
-                                  </div>`;
-            })
+            if(userpost.length > 0){
+                userpost.forEach(userpost => {
+                    postContainer += `<div class="userpost">
+                                        <h4>${userpost.title}</h4>
+                                        <p>${userpost.body}</p>
+                                      </div>`;
+                })
+                personenblockposts.innerHTML = ueberschrift + postContainer;
+            }
 
-            personenblockposts.innerHTML = ueberschrift + postContainer;
+            else{
+                let noposts = `<div class="noposts">Der User hat noch nichts gepostet</div>`
+                personenblockposts.innerHTML = ueberschrift + noposts;
+            }
+
+    
         
     })
 }
