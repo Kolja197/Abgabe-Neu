@@ -193,10 +193,6 @@ main .spalten{
 }
 
 
-/* Textfeld wird nach der API-Abfrage durch div Container der Klasse "kunden-container" ersetz */
-main .kunden-container{
-}
-
 /* innerHTML aus JS, Darstellung der Personen (Kurzdarstellung) nach der API-Abfrage */
 main #personenauswahl{
     background: rgba(255, 255, 255, 0.2);
@@ -431,7 +427,7 @@ main .hauptbereich2{
     }
 
     main .hauptbereich{
-        font-size: 170%
+        font-size: 170%;
     }
 
     main .searchbar input::placeholder{
@@ -445,3 +441,12 @@ main .hauptbereich2{
  }
 
 
+@media print{
+    header{
+        display: none;
+    }
+    
+    footer {
+        display: none;
+    }
+}
