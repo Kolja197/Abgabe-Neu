@@ -76,21 +76,17 @@ header h1{
 } 
 
 /* Navigation-Bar */
-header .navigation{ 
+header .navigation ul{
+    list-style: none;
+    padding: 0;
+    
     display: flex;
     justify-content: center;
     align-items: center; 
     text-align: center;
     flex-direction: column;
 }
-
-/* Zentrieren der ul innerhalb des nav-containers */
-header .navigation ul{
-    list-style-type: none;
-    list-style: none;
-    padding: 0;
-}
-
+    
 /* Design und Abstand der Listenelemente */
 header .navigation .list-element{
     margin-bottom: 0.7em;
@@ -351,36 +347,7 @@ main .hauptbereich2{
         padding-bottom: 20px;
         position: sticky;
     }
-    
-    header .navigation ul{
-        display: flex;
-        justify-content: center;
-    }
-
-
-    /* Hier hatte ich Probleme, das mittlere Element vertikal zu zentrieren,
-    da ich zwar den ul-container zentrieren konnte, "Kontakt" stand jedoch nie
-    vertikal zentriert unter dem h1-container des headers. Deswegen musste ich 
-    die Positionen der einzelnen li-elemente hardcoden */
-    header .navigation ul #erstes_ul_element{
-        position: absolute;
-        left: 25%;
-        transform: translateX(-50%);
-    } 
-
-    header .navigation ul #zweites_ul_element{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    header .navigation ul #drittes_ul_element{
-        position: absolute;
-        left: 75%;
-        transform: translateX(-50%);
-    } 
-
-    
+        
     /************************
     *  HAUPTBEREICH SEITE 1 *
     ************************/
@@ -415,12 +382,13 @@ main .hauptbereich2{
         padding-right: 0;
     }
 
-
-  
-   
-
-
-
+    header .navigation ul{
+        list-style: none;
+        padding: 0;
+        
+        flex-direction: row;
+        gap: 2em;
+    }
 
     /****************
     * Schriftgrößen *
@@ -431,7 +399,7 @@ main .hauptbereich2{
     }
 
     main .hauptbereich{
-        font-size: 170%
+        font-size: 130%
     }
 
     main .searchbar input::placeholder{
