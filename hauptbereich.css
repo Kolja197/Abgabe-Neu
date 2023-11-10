@@ -3,8 +3,7 @@ main .hauptbereich, .hauptbereich2, #textfeld, .personenblockposts, .personendat
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    
+    flex-direction: column;   
  }
 
 /************************
@@ -15,7 +14,7 @@ main .hauptbereich, .hauptbereich2, #textfeld, .personenblockposts, .personendat
     margin: 0;
     flex: 1;
     margin-bottom: 2em;
-    font-size: 1.1em; 
+    font-size: var(--schrift_klein);
 }
 
  /* Anordnung des Hauptbereichs der Startseite */
@@ -36,6 +35,8 @@ main .searchbar{
     margin: 0px 0px;
     }
 
+
+
 main .searchbar input{
     background: transparent;
     flex: 1;
@@ -45,6 +46,8 @@ main .searchbar input{
     font-size: 15px;
     color: white;
 }
+
+
 
 /* Button "Lupe" anpassen"*/
 main .searchbar button img{
@@ -62,13 +65,11 @@ main .searchbar button{
 
 /* Farbe des Placeholders "Suchen..." anpassen */
 main .searchbar input::placeholder{
-    color: white;
-    font-size: 1.1em;
+    color: white; 
 }
     
 main #textfeld{
     text-align: center;
-    font-size: 1em; 
     margin-left: 1em;
     margin-right: 1em;
     gap: 2em;
@@ -87,7 +88,7 @@ main #personenauswahl{
     border-radius: 1.5em;
     padding: 0.5em 0.5em;
     border: none;
-    font-size: 1.2em;
+    font-size: var(--schrift_klein);
     cursor: pointer;
     color: white;
 }

@@ -1,3 +1,14 @@
+/*************
+ * VARIABLEN *
+ *************/
+ :root {
+    --schrift_groß: clamp(30px, 5vw, 50px);
+    --schrift_mittel: clamp(22px, 2.5vw, 39px);
+    --schrift_klein: clamp(18px, 2.5vw, 35px);
+    --schrift_searchbar: clamp(10px, 2.5vh, 18px);
+}
+
+
 /***************
  * ALLGEMEINES *
  ***************/
@@ -60,7 +71,7 @@ header, footer {
     ***************/
     /* Header Elemente Vertikal poisitonieren */
     header{
-        padding-bottom: 20px;
+        padding-bottom: clamp(20px, 2.5vw, 40px);
         position: sticky;
     }
     
@@ -98,64 +109,24 @@ header, footer {
     ************************/
     /* hauptbereich-Container weiter nach unten verschieben */
     main .hauptbereich{
-        margin-top: 6em;
+        padding-top: 90px;
         gap: 3.5em;
     }
 
     /* Searchbar-Größe anpassen */
-    main .searchbar{
-        padding: 15px;
-        padding-right: 0.3em;
-        padding-left: 1.5em;
-    }
-    
     main .searchbar input{
-        font-size: 0.9em;
         padding-left: 0;
         margin-left: 0;
-        margin-right: 2em;
+        margin-right: 200px; 
     }
 
-    main .searchbar button img{
-        width: 3.5em;
+    main .searchbar #suchleiste{
+        font-size: var(--schrift_searchbar);
     }
-
-    main .searchbar button{
-        width: 5em;
-        height: 5em;
-        margin-right: 0;
-        padding-right: 0;
-    }
-
-
   
-   
+    
 
-
-
-
-    /****************
-    * Schriftgrößen *
-    *****************/
-    /* Hier findet eine Anpassung aller restlichen Schriftgrößens statt (teilweise wird auch oben angepasst) */
-    header h1{
-        font-size: 3rem;    
-    }
-
-    main .hauptbereich{
-        font-size: 130%;
-    }
-
-    main .searchbar input::placeholder{
-        font-size: 1.1em;
-    }
-
-    footer{
-        font-size: 1.5rem;
-    }
- 
- }
-
+}
 
 @media print{
     header{
