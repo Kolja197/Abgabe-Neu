@@ -1,0 +1,184 @@
+/* Reuktion von Redundanz */
+main .hauptbereich, .hauptbereich2, #textfeld, .personenblockposts, .personendaten, .userposts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+ }
+
+/************************
+ *  HAUPTBEREICH SEITE 1 *
+ ************************/
+ main{
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    margin-bottom: 2em;
+    font-size: 1.1em; 
+}
+
+ /* Anordnung des Hauptbereichs der Startseite */
+ main .hauptbereich{
+    width: 100%;
+    margin-top: 3em;
+    gap: 2em;
+ }
+
+
+ /* Suchleiste Darstellung */
+main .searchbar{
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px 5px;
+    margin: 0px 0px;
+    }
+
+main .searchbar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 1em 1.5em;
+    font-size: 15px;
+    color: white;
+}
+
+/* Button "Lupe" anpassen"*/
+main .searchbar button img{
+    width: 2em;
+}
+
+main .searchbar button{
+    border: 0;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    background: rgba(0,0,0, 0.2);
+    cursor: pointer;
+}
+
+/* Farbe des Placeholders "Suchen..." anpassen */
+main .searchbar input::placeholder{
+    color: white;
+    font-size: 1.1em;
+}
+    
+main #textfeld{
+    text-align: center;
+    font-size: 1em; 
+    margin-left: 1em;
+    margin-right: 1em;
+    gap: 2em;
+
+ }
+
+ /* Abstand zwischen den Absätzen auf der Startseite */
+main .spalten{
+    padding-bottom: 0.5em;
+}
+
+
+/* innerHTML aus JS, Darstellung der Personen (Kurzdarstellung) nach der API-Abfrage */
+main #personenauswahl{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1.5em;
+    padding: 0.5em 0.5em;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: white;
+}
+
+/* Animation für hervorheben des Suchergebnisses - wenn die Maus über das Element fährt */
+main #personenauswahl:hover{
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.1);
+
+}
+
+
+/*************************
+ *  HAUPTBEREICH SEITE 2 *
+ *************************/
+
+
+/* Anordnung des Hauptbereichs auf der Detailseite */
+main .hauptbereich2{
+    width: 100%;
+    margin-top: 3em;
+    gap: 0.5em;
+}
+
+
+/* Anpassung Profilbild */
+.profilbild_container{
+    margin-bottom: 1em;
+}
+.profilbild_img{
+    height: 7em;
+    width: 7em;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Gestaltung der Usercard */
+ .usercard {
+    width: 20em;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Abstand der Schrift zum Container-Rand */
+.usercard-content{
+   margin: 1em;
+}
+
+/* Abstand zwischen den Zeilen */
+.usercard-content div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+/* Schriftart anpassen */
+.usercard-content .label{
+    font-weight: bold;
+}
+
+/* Überschrift "Blockposts" ändern */
+.blockpost{
+    text-decoration: underline;
+    margin-top: 3em;
+    margin-bottom: 0;
+}
+
+/* Gap zwischen User-Posts */
+.personenblockposts{
+    gap: 1em;
+}
+
+/* Anpassen Titel der Blockposts */
+.personenblockposts h4{
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+/* Text mittig zentrieren */
+.personenblockposts p{
+    text-align: center;
+}
+
+
+/* Userposts Seitenabstäne */
+.userpost{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+/* Anzeigetext wenn User keine Posts hat */
+.noposts {
+    margin-top: 1em;
+}
