@@ -1,14 +1,3 @@
-/************
-* MEDIA-QUERY *
-*************/
-@media screen and (min-width: 768px) {
-    header .navigation{
-        flex-direction: row;
-    }
-  }
-
-
-
 /***************
  * ALLGEMEINES *
  ***************/
@@ -72,7 +61,7 @@ header{
     
     backdrop-filter: blur(10px);
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 header .header-container{
@@ -90,7 +79,7 @@ header h1{
 header .navigation{ 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     text-align: center;
     flex-direction: column;
 }
@@ -117,7 +106,7 @@ header .navigation a{
 
 
 /************************
- *  HAUPTBEREICH SEITE 1*
+ *  HAUPTBEREICH SEITE 1 *
  ************************/
 main{
     padding: 0;
@@ -221,14 +210,14 @@ main #personenauswahl{
 
 /* Animation für hervorheben des Suchergebnisses - wenn die Maus über das Element fährt */
 main #personenauswahl:hover{
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.1);
 
 }
 
 
-/************************
- *  HAUPTBEREICH SEITE 2*
- ************************/
+/*************************
+ *  HAUPTBEREICH SEITE 2 *
+ *************************/
 
 
 /* Anordnung des Hauptbereichs auf der Detailseite */
@@ -349,7 +338,110 @@ main .hauptbereich2{
  }
 
 
+/****************
+ *  MEDIA QUERY *
+ ****************/
+ @media screen and (min-width: 768px) {
+    
+    /***************
+    * KOPFBEREICH *
+    ***************/
+    /* Header Elemente Vertikal poisitonieren */
+    header{
+        padding-bottom: 20px;
+        position: sticky;
+    }
+    
+    header .navigation ul{
+        display: flex;
+        justify-content: center;
+    }
 
 
+    /* Hier hatte ich Probleme, das mittlere Element vertikal zu zentrieren,
+    da ich zwar den ul-container zentrieren konnte, "Kontakt" stand jedoch nie
+    vertikal zentriert unter dem h1-container des headers. Deswegen musste ich 
+    die Positionen der einzelnen li-elemente hardcoden */
+    header .navigation ul #erstes_ul_element{
+        position: absolute;
+        left: 25%;
+        transform: translateX(-50%);
+    } 
+
+    header .navigation ul #zweites_ul_element{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    header .navigation ul #drittes_ul_element{
+        position: absolute;
+        left: 75%;
+        transform: translateX(-50%);
+    } 
+
+    
+    /************************
+    *  HAUPTBEREICH SEITE 1 *
+    ************************/
+    /* hauptbereich-Container weiter nach unten verschieben */
+    main .hauptbereich{
+        margin-top: 6em;
+        gap: 3.5em;
+    }
+
+    /* Searchbar-Größe anpassen */
+    main .searchbar{
+        padding: 15px;
+        padding-right: 0.3em;
+        padding-left: 1.5em;
+    }
+    
+    main .searchbar input{
+        font-size: 0.9em;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 2em;
+    }
+
+    main .searchbar button img{
+        width: 3.5em;
+    }
+
+    main .searchbar button{
+        width: 5em;
+        height: 5em;
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+
+  
+   
+
+
+
+
+    /****************
+    * Schriftgrößen *
+    *****************/
+    /* Hier findet eine Anpassung aller restlichen Schriftgrößens statt (teilweise wird auch oben angepasst) */
+    header h1{
+        font-size: 3rem;    
+    }
+
+    main .hauptbereich{
+        font-size: 170%
+    }
+
+    main .searchbar input::placeholder{
+        font-size: 1.1em;
+    }
+
+    footer{
+        font-size: 1.5rem;
+    }
+ 
+ }
 
 
